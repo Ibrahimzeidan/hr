@@ -4,6 +4,15 @@ export type AnalysisResult = {
   semantic_similarity: number;
   keyword_score: number;
   explanation: string;
+  // Gemini-enhanced insights
+  candidate_summary?: string;
+  hiring_recommendation?: string;
+  confidence_score?: number;
+  strengths?: string[];
+  weaknesses?: string[];
+  recommendations?: string[];
+  ai_provider?: string | null;
+  ai_model?: string | null;
 };
 
 export type Candidate = {
@@ -36,3 +45,9 @@ export type UploadResponse = {
   candidates: Candidate[];
 };
 
+export type HiringRecommendation = 
+  | "Strong Hire" 
+  | "Hire" 
+  | "Consider" 
+  | "Weak Match" 
+  | "Reject";

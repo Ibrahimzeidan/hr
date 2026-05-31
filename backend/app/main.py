@@ -7,6 +7,7 @@ from slowapi.middleware import SlowAPIMiddleware
 from app.api.routes import analysis, candidates, export, upload
 from app.core.config import get_settings
 from app.core.security import limiter
+from app.database.session import check_db_connection
 from app.schemas.common import Message
 
 settings = get_settings()
@@ -26,6 +27,12 @@ app.add_middleware(
 @app.get("/health", response_model=Message)
 def health() -> Message:
     return Message(message="ok")
+
+
+@app.get("/health/db")
+def health_db():
+    """Check database connection status and return diagnostic information."""
+    return check_db_connection()
 
 
 app.include_router(candidates.router)

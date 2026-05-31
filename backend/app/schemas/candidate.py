@@ -15,6 +15,15 @@ class AnalysisResultOut(BaseModel):
     semantic_similarity: float
     keyword_score: float
     explanation: str
+    # Gemini-enhanced insights
+    candidate_summary: str = ""
+    hiring_recommendation: str = "Consider"
+    confidence_score: float = 0
+    strengths: list[str] = []
+    weaknesses: list[str] = []
+    recommendations: list[str] = []
+    ai_provider: str | None = None
+    ai_model: str | None = None
     model_config = ConfigDict(from_attributes=True)
 
 
