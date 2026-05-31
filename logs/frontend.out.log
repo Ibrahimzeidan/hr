@@ -1,0 +1,13 @@
+
+> resume-ranker-frontend@1.0.0 dev
+> next dev -p 3000
+
+   ▲ Next.js 15.5.18
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.0.104:3000
+
+ ✓ Starting...
+ ✓ Ready in 1970ms
+ ○ Compiling / ...
+ ✓ Compiled / in 3s (762 modules)
+ GET / 200 in 3395ms
